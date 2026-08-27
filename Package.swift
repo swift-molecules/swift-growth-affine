@@ -19,15 +19,11 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-growth.git",
+            url: "https://github.com/swift-atoms/swift-growth.git",
             branch: "main"
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-affine.git",
-            branch: "main"
-        ),
-        .package(
-            url: "https://github.com/swift-atoms/swift-index.git",
             branch: "main"
         ),
     ],
@@ -37,12 +33,15 @@ let package = Package(
             dependencies: [
                 .product(name: "Growth", package: "swift-growth"),
                 .product(name: "Affine", package: "swift-affine"),
-                .product(name: "Index", package: "swift-index"),
             ]
         ),
         .testTarget(
             name: "Growth Affine Tests",
-            dependencies: ["Growth Affine"]
+            dependencies: [
+                "Growth Affine",
+                .product(name: "Growth", package: "swift-growth"),
+                .product(name: "Affine", package: "swift-affine"),
+            ]
         ),
     ],
     swiftLanguageModes: [.v6]

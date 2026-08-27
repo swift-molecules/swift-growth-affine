@@ -1,3 +1,5 @@
-# swift-growth-affine
+# Growth Affine
 
-Affine integration for the Growth domain: ratio-scaled growth policies.
+Provides ratio-scaled `Growth.Policy` strategies using typed
+`Affine.Discrete.Ratio` values. Scaled capacities retain the Growth domain's
+minimum capacity of one.
